@@ -12,5 +12,3 @@ EXPIRATION=${3:-604800}  # Default to 7 days
 aws s3 cp "$FILE" "s3://$BUCKET/" --acl private
 
 aws s3 presign "s3://$BUCKET/$(basename "$FILE")" --expires-in "$EXPIRATION"
-
-
